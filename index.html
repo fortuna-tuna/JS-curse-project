@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
-<body class="">
+<body>
     <section class="container mt-5">
         <div class="row justify-content-center">
             <form class="col-4">
@@ -16,7 +16,7 @@
                         <label for="name-field" class="text-white fw-bold fs-5 ">Profile name:</label>
                     </div>
                     <div class="col">
-                        <input type="text" name="name-field" class="w-100">
+                        <input type="text" name="name-field" class="w-100" id="user-name">
                     </div>
                 </div>
 
@@ -29,6 +29,11 @@
         </div>
     </section>
 
-    <script src="search-btn"></script>
+    <section class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-6 p-4" id="card-container"></div>
+        </div>
+    </section>
+    <script src="script.js"></script>
 </body>
 </html>
