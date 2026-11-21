@@ -16,14 +16,14 @@ searchBtn.addEventListener("click", async (e) => {
 
 })
 
-async function getFetch(url){
+async function getFetch(){
     let nameField = document.querySelector("#user-name");
     currentUser = nameField.value;
     nameField.value = "";
 
     if(currentUser === "") return;
 
-    let request = await fetch(`${url}/users/${currentUser}`);
+    let request = await fetch(`${URL}/users/${currentUser}`);
     let data = await request.json();
 
     return data;
@@ -66,4 +66,14 @@ function createCard(data){
             </div>
         </div>
     `;
+
+    let getUserRepo = document.querySelector("#user-repo");
+    getUserRepo.addEventListener("click", (e) => getRepo(e));
+}
+
+async function getRepo(e){
+    let request = await fetch(`${URL}/users/${currentUser}/repos?per_page=100&sort=updated`);
+    let data = await request.json();
+
+    console.log(data);
 }
